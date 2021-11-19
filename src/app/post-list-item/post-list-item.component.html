@@ -10,10 +10,10 @@
     <p class="date">{{ post.created_at | date: "EEEE d MMMM y à H:mm:s" }}</p>
   </div>
   <p>{{ post.content }}</p>
-  <p>{{ post.loveIts }} likes</p>
+  <p>{{ post.loveIts }} j'aimes</p>
   <div class="row">
-    <button class="btn btn-success btn-sm mr-2" (click)="onLoveIt()">Love It</button>
-    <button class="btn btn-danger btn-sm mr-2" (click)="onDontLoveIt()">Don't Love It</button>
+    <button class="btn btn-success btn-sm mr-2" (click)="onLoveIt()">J'aime</button>
+    <button class="btn btn-danger btn-sm mr-2" (click)="onDontLoveIt()">J'aime plus</button>
     <button class="btn btn-danger btn-sm ml-auto" (click)="removePost()">Supprimer</button>
   </div>
 </li>

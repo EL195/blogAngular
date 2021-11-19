@@ -13,14 +13,14 @@ export class PostsService {
   constructor(private httpClient: HttpClient) {
     this.getPosts();
   }
-
+//Méthode permettant d'émettre les posts
   emitPosts() {
     this.postsSubject.next(this.posts);
   }
 
   savePosts(){
     this.httpClient
-      .put('https://blogangular-5880a-default-rtdb.europe-west1.firebasedatabase.app/posts.json', this.posts)
+      .put('https://micheltanga.com/ng-blog/posts.json', this.posts)
       .subscribe(
         () => {
           console.log('Enregistrement terminé !');
@@ -29,6 +29,7 @@ export class PostsService {
           console.log('Erreur ! : ' + error);
         }
       );
+    //Accès aux différents changement de l'objet
     this.emitPosts();
   }
 
@@ -51,7 +52,7 @@ export class PostsService {
 
   getPosts() {
     this.httpClient
-      .get<any[]>('https://blogangular-5880a-default-rtdb.europe-west1.firebasedatabase.app/posts.json')
+      .get<any[]>('https://micheltanga.com/ng-blog/posts.json')
       .subscribe(
         (response) => {
           this.posts = response;
